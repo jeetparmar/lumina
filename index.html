@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMINA — Photography Portfolio</title>
+  <meta name="description" content="Award-winning photography by Alex Mercer — Wedding, Travel, Wildlife, Portrait" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">LUMINA</div>
+      <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      <div class="loader-count" id="loaderCount">0%</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">LUMINA</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#gallery" class="nav-link" data-section="gallery">Gallery</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+        <li><a href="#blog" class="nav-link" data-section="blog">Journal</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-icon moon">◑</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-progress" id="navProgress"></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg">
+      <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1682686581030-7fa4ea2b96c3?w=1920&q=80')"></div>
+      <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=1920&q=80')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Fine Art Photography</p>
+      <h1 class="hero-title">
+        <span class="hero-line">Capturing</span>
+        <span class="hero-line italic">Moments</span>
+        <span class="hero-line">Beyond Time</span>
+      </h1>
+      <p class="hero-sub">Wedding &nbsp;·&nbsp; Travel &nbsp;·&nbsp; Wildlife &nbsp;·&nbsp; Portrait</p>
+      <div class="hero-cta">
+        <a href="#gallery" class="btn btn-primary">View Portfolio</a>
+        <a href="#contact" class="btn btn-ghost">Book a Session</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero-slide-controls">
+      <button class="slide-dot active" data-slide="0"></button>
+      <button class="slide-dot" data-slide="1"></button>
+      <button class="slide-dot" data-slide="2"></button>
+      <button class="slide-dot" data-slide="3"></button>
+    </div>
+    <div class="hero-counter">
+      <span id="heroSlideNum">01</span>
+      <span class="counter-divider"></span>
+      <span>04</span>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="featured" id="featured">
+    <div class="section-header reveal-up">
+      <span class="section-tag">Selected Work</span>
+      <h2 class="section-title">Featured <em>Stories</em></h2>
+    </div>
+    <div class="featured-grid">
+      <article class="featured-card large reveal-left" data-tilt>
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Wedding" class="lazy" />
+        </div>
+        <div class="card-info">
+          <span class="card-cat">Wedding</span>
+          <h3>Sarah &amp; James</h3>
+          <p>Tuscany, Italy · 2024</p>
+        </div>
+      </article>
+      <article class="featured-card reveal-up" data-tilt>
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1551009175-8a68da93d5f9?w=800&q=80" alt="Wildlife" class="lazy" />
+        </div>
+        <div class="card-info">
+          <span class="card-cat">Wildlife</span>
+          <h3>African Savanna</h3>
+          <p>Kenya · Golden Hour</p>
+        </div>
+      </article>
+      <article class="featured-card reveal-up" data-tilt>
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80" alt="Travel" class="lazy" />
+        </div>
+        <div class="card-info">
+          <span class="card-cat">Travel</span>
+          <h3>Lost in Patagonia</h3>
+          <p>Chile · Landscape</p>
+        </div>
+      </article>
+      <article class="featured-card reveal-right" data-tilt>
+        <div class="card-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Portrait" class="lazy" />
+        </div>
+        <div class="card-info">
+          <span class="card-cat">Portrait</span>
+          <h3>Golden Light</h3>
+          <p>Studio Series · 2024</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header reveal-up">
+      <span class="section-tag">Full Collection</span>
+      <h2 class="section-title">The <em>Gallery</em></h2>
+    </div>
+    <div class="gallery-controls reveal-up">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24" class="search-icon" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="Search by tag, category…" class="search-input" />
+        <button class="search-clear" id="searchClear">✕</button>
+      </div>
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wedding">Wedding</button>
+        <button class="filter-btn" data-filter="travel">Travel</button>
+        <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+        <button class="filter-btn" data-filter="portrait">Portrait</button>
+        <button class="filter-btn" data-filter="architecture">Architecture</button>
+      </div>
+    </div>
+    <div class="masonry-grid" id="masonryGrid"></div>
+    <div class="gallery-footer">
+      <button class="btn btn-primary" id="loadMoreBtn">Load More</button>
+      <p class="gallery-count" id="galleryCount"></p>
+    </div>
+  </section>
+
+  <!-- BEFORE/AFTER -->
+  <section class="before-after-section reveal-up">
+    <div class="section-header">
+      <span class="section-tag">Post Processing</span>
+      <h2 class="section-title">Before <em>&amp;</em> After</h2>
+      <p class="section-sub">Drag the slider to reveal the transformation</p>
+    </div>
+    <div class="ba-container">
+      <div class="ba-slider" id="baSlider">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80&sat=-100" alt="Before" class="ba-before" />
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80" alt="After" class="ba-after" />
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-handle-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 3l-5 5 5 5M16 3l5 5-5 5"/></svg>
+          </div>
+          <div class="ba-handle-line"></div>
+        </div>
+        <span class="ba-label left">Before</span>
+        <span class="ba-label right">After</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-grid">
+      <div class="about-image-col reveal-left">
+        <div class="about-img-stack">
+          <img data-src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&q=80" alt="Photographer" class="lazy about-img-main" />
+          <img data-src="https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=400&q=80" alt="Behind the scenes" class="lazy about-img-secondary" />
+        </div>
+        <div class="about-stats">
+          <div class="stat-item"><span class="stat-num" data-count="12">0</span><span class="stat-label">Years</span></div>
+          <div class="stat-item"><span class="stat-num" data-count="847">0</span><span class="stat-label">Projects</span></div>
+          <div class="stat-item"><span class="stat-num" data-count="42">0</span><span class="stat-label">Awards</span></div>
+        </div>
+      </div>
+      <div class="about-text-col reveal-right">
+        <span class="section-tag">The Story</span>
+        <h2 class="section-title">I Don't Take <em>Photos,</em><br>I Craft <em>Memories</em></h2>
+        <p class="about-lead">Every frame is a silent poem — a conversation between light, shadow, and the human soul.</p>
+        <p class="about-body">Born in Prague, trained in Florence, and now based between New York and the world, Alex Mercer has spent over a decade chasing light across five continents. His work has been featured in National Geographic, Vogue, and The New Yorker.</p>
+        <p class="about-body">What drives him isn't technology or technique — it's the obsessive pursuit of the single perfect moment when everything aligns: the light, the subject, the story.</p>
+        <div class="timeline">
+          <div class="timeline-item"><span class="tl-year">2012</span><span class="tl-event">First published in National Geographic</span></div>
+          <div class="timeline-item"><span class="tl-year">2016</span><span class="tl-event">World Press Photo — 2nd Place, Wildlife</span></div>
+          <div class="timeline-item"><span class="tl-year">2019</span><span class="tl-event">Solo Exhibition — MoMA, New York</span></div>
+          <div class="timeline-item"><span class="tl-year">2023</span><span class="tl-event">Published "Light &amp; Shadow" — first monograph</span></div>
+        </div>
+        <a href="#contact" class="btn btn-primary">Work With Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="section-header reveal-up">
+      <span class="section-tag">What I Offer</span>
+      <h2 class="section-title">Photography <em>Services</em></h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass reveal-up" data-delay="0">
+        <div class="service-icon">◈</div>
+        <h3>Wedding</h3>
+        <p>Timeless documentation of your most important day, from intimate elopements to grand celebrations.</p>
+        <div class="service-price">From $3,500</div>
+        <a href="#contact" class="service-link">Enquire →</a>
+      </div>
+      <div class="service-card glass reveal-up" data-delay="100">
+        <div class="service-icon">◉</div>
+        <h3>Portrait</h3>
+        <p>Personal, editorial, and commercial portraits that reveal the authentic essence of your personality.</p>
+        <div class="service-price">From $800</div>
+        <a href="#contact" class="service-link">Enquire →</a>
+      </div>
+      <div class="service-card glass reveal-up" data-delay="200">
+        <div class="service-icon">◎</div>
+        <h3>Travel &amp; Landscape</h3>
+        <p>Commissioned travel photography for brands, publications, and personal collections worldwide.</p>
+        <div class="service-price">From $2,000</div>
+        <a href="#contact" class="service-link">Enquire →</a>
+      </div>
+      <div class="service-card glass reveal-up" data-delay="300">
+        <div class="service-icon">⬡</div>
+        <h3>Commercial</h3>
+        <p>Product, architectural, and brand photography crafted to elevate your visual identity.</p>
+        <div class="service-price">From $1,500</div>
+        <a href="#contact" class="service-link">Enquire →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog-section" id="blog">
+    <div class="section-header reveal-up">
+      <span class="section-tag">Field Notes</span>
+      <h2 class="section-title">The <em>Journal</em></h2>
+    </div>
+    <div class="blog-grid">
+      <article class="blog-card reveal-up" data-delay="0">
+        <div class="blog-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Blog" class="lazy" />
+          <span class="blog-cat">Travel</span>
+        </div>
+        <div class="blog-body">
+          <time>March 12, 2025</time>
+          <h3>Chasing the Light: 30 Days in Iceland</h3>
+          <p>When the sun barely sets and the northern lights paint the sky, every second is a photograph waiting to happen.</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </article>
+      <article class="blog-card reveal-up" data-delay="150">
+        <div class="blog-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1551009175-8a68da93d5f9?w=800&q=80" alt="Blog" class="lazy" />
+          <span class="blog-cat">Wildlife</span>
+        </div>
+        <div class="blog-body">
+          <time>February 3, 2025</time>
+          <h3>The Great Migration: A Photographer's Diary</h3>
+          <p>Eight thousand wildebeest, one camera, and the most spectacular show on Earth. Here's how it felt.</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </article>
+      <article class="blog-card reveal-up" data-delay="300">
+        <div class="blog-img-wrap">
+          <img data-src="https://images.unsplash.com/photo-1452457807411-4979b707c5be?w=600&q=80" alt="Blog" class="lazy" />
+          <span class="blog-cat">Technique</span>
+        </div>
+        <div class="blog-body">
+          <time>January 18, 2025</time>
+          <h3>My Camera Bag: What I Carry and Why</h3>
+          <p>After twelve years and three continents, I've stripped it down to the essentials. Less is more — always.</p>
+          <a href="#" class="blog-read">Read More →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- UPLOAD -->
+  <section class="upload-section reveal-up">
+    <div class="section-header">
+      <span class="section-tag">Admin Panel</span>
+      <h2 class="section-title">Upload <em>Photos</em></h2>
+    </div>
+    <div class="upload-area" id="uploadArea">
+      <div class="upload-inner">
+        <div class="upload-icon">⬆</div>
+        <p class="upload-title">Drag &amp; Drop images here</p>
+        <p class="upload-sub">or click to browse — PNG, JPG, WEBP up to 20MB</p>
+        <input type="file" id="fileInput" accept="image/*" multiple hidden />
+        <button class="btn btn-primary" id="browseBtn">Browse Files</button>
+      </div>
+    </div>
+    <div class="upload-preview" id="uploadPreview"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-header reveal-up">
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Let's Create <em>Together</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:alex@lumina.photo" class="contact-value">alex@lumina.photo</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <a href="tel:+12125551234" class="contact-value">+1 (212) 555-1234</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Based in</span>
+          <span class="contact-value">New York, NY · Available Worldwide</span>
+        </div>
+        <div class="contact-socials">
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Behance</a>
+          <a href="#" class="social-link">500px</a>
+          <a href="#" class="social-link">LinkedIn</a>
+        </div>
+        <div class="contact-map-placeholder">
+          <div class="map-grid"></div>
+          <div class="map-pin">📍 New York</div>
+        </div>
+      </div>
+      <form class="contact-form reveal-right" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane" />
+            <span class="form-error" id="firstNameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" />
+            <span class="form-error" id="lastNameError"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="emailInput">Email Address</label>
+          <input type="email" id="emailInput" name="email" placeholder="jane@example.com" />
+          <span class="form-error" id="emailError"></span>
+        </div>
+        <div class="form-group">
+          <label for="serviceSelect">Service Type</label>
+          <select id="serviceSelect" name="service">
+            <option value="">Select a service…</option>
+            <option>Wedding Photography</option>
+            <option>Portrait Session</option>
+            <option>Travel / Landscape</option>
+            <option>Commercial</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, date, location…"></textarea>
+          <span class="form-error" id="messageError"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-loader hidden"></span>
+        </button>
+        <div class="form-success hidden" id="formSuccess">
+          <span>✓</span> Message sent! I'll reply within 24 hours.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">LUMINA</div>
+      <p class="footer-tagline">Light is my medium. Memory is my art.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Alex Mercer / LUMINA Photography. All rights reserved.</p>
+      <p>Crafted with ◈ precision</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+    <button class="lb-next" id="lbNext" aria-label="Next">›</button>
+    <div class="lb-inner">
+      <img class="lb-img" id="lbImg" src="" alt="" />
+      <div class="lb-meta" id="lbMeta">
+        <div class="lb-meta-row">
+          <span class="lb-title" id="lbTitle"></span>
+          <div class="lb-actions">
+            <button class="lb-fav" id="lbFav" aria-label="Favorite">♡</button>
+            <a class="lb-download" id="lbDownload" download="lumina-photo.jpg" aria-label="Download">⬇</a>
+          </div>
+        </div>
+        <div class="lb-exif" id="lbExif"></div>
+      </div>
+    </div>
+    <div class="lb-backdrop" id="lbBackdrop"></div>
+  </div>
+
+  <!-- Back to top -->
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
